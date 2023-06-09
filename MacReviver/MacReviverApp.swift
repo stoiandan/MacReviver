@@ -6,15 +6,12 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct MacReviverApp: App {
-
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
-        .modelContainer(for: Item.self)
     }
 }

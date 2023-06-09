@@ -17,15 +17,29 @@ final class MacReviverTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testFirmwareURLWorks() {
+        let firmwareURL = URL(string: PlistFirmwareFetcher.firmwarePlistURL)
+        
+        XCTAssertNotNil(firmwareURL)
+        
     }
 
+    func testDownloadPlistFirmware() async throws {
+        let firmware = try? await PlistFirmwareFetcher.plistFirmware()
+        
+        XCTAssertNotNil(firmware)
+    }
+
+    
+    func testPlistFirmware() async throws {
+        let firmware = try? await PlistFirmwareFetcher.plistFirmware()
+        
+        let plistFrimware = PlistFirmware(plist: firmware!)
+        
+        XCTAssertTrue(plistFrimware.hardwareVersions.count != 0)
+    }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {

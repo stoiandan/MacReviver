@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		3753DF5D2A2F4ACB00BA53BB /* MacReviverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF5C2A2F4ACB00BA53BB /* MacReviverApp.swift */; };
-		3753DF5F2A2F4ACB00BA53BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF5E2A2F4ACB00BA53BB /* ContentView.swift */; };
+		3753DF5F2A2F4ACB00BA53BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF5E2A2F4ACB00BA53BB /* MainView.swift */; };
 		3753DF612A2F4ACB00BA53BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3753DF602A2F4ACB00BA53BB /* Assets.xcassets */; };
 		3753DF642A2F4ACB00BA53BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3753DF632A2F4ACB00BA53BB /* Preview Assets.xcassets */; };
-		3753DF662A2F4ACB00BA53BB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF652A2F4ACB00BA53BB /* Item.swift */; };
 		3753DF712A2F4ACB00BA53BB /* MacReviverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF702A2F4ACB00BA53BB /* MacReviverTests.swift */; };
 		3753DF7B2A2F4ACC00BA53BB /* MacReviverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF7A2A2F4ACC00BA53BB /* MacReviverUITests.swift */; };
 		3753DF7D2A2F4ACC00BA53BB /* MacReviverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF7C2A2F4ACC00BA53BB /* MacReviverUITestsLaunchTests.swift */; };
+		37F193082A33048900362913 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F193072A33048900362913 /* MainViewModel.swift */; };
+		37F1930C2A3307C800362913 /* PlistFirmwareFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1930B2A3307C800362913 /* PlistFirmwareFetcher.swift */; };
+		37F1930E2A3320F000362913 /* PlistFirmware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1930D2A3320F000362913 /* PlistFirmware.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,16 +39,18 @@
 /* Begin PBXFileReference section */
 		3753DF592A2F4ACB00BA53BB /* MacReviver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacReviver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3753DF5C2A2F4ACB00BA53BB /* MacReviverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacReviverApp.swift; sourceTree = "<group>"; };
-		3753DF5E2A2F4ACB00BA53BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3753DF5E2A2F4ACB00BA53BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3753DF602A2F4ACB00BA53BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3753DF632A2F4ACB00BA53BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3753DF652A2F4ACB00BA53BB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3753DF672A2F4ACB00BA53BB /* MacReviver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacReviver.entitlements; sourceTree = "<group>"; };
 		3753DF6C2A2F4ACB00BA53BB /* MacReviverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacReviverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3753DF702A2F4ACB00BA53BB /* MacReviverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacReviverTests.swift; sourceTree = "<group>"; };
 		3753DF762A2F4ACC00BA53BB /* MacReviverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacReviverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3753DF7A2A2F4ACC00BA53BB /* MacReviverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacReviverUITests.swift; sourceTree = "<group>"; };
 		3753DF7C2A2F4ACC00BA53BB /* MacReviverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacReviverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		37F193072A33048900362913 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		37F1930B2A3307C800362913 /* PlistFirmwareFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFirmwareFetcher.swift; sourceTree = "<group>"; };
+		37F1930D2A3320F000362913 /* PlistFirmware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFirmware.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +101,10 @@
 		3753DF5B2A2F4ACB00BA53BB /* MacReviver */ = {
 			isa = PBXGroup;
 			children = (
+				37F1930A2A3307B300362913 /* Domain */,
+				37F193092A3307A400362913 /* Views */,
 				3753DF5C2A2F4ACB00BA53BB /* MacReviverApp.swift */,
-				3753DF5E2A2F4ACB00BA53BB /* ContentView.swift */,
 				3753DF602A2F4ACB00BA53BB /* Assets.xcassets */,
-				3753DF652A2F4ACB00BA53BB /* Item.swift */,
 				3753DF672A2F4ACB00BA53BB /* MacReviver.entitlements */,
 				3753DF622A2F4ACB00BA53BB /* Preview Content */,
 			);
@@ -130,6 +134,24 @@
 				3753DF7C2A2F4ACC00BA53BB /* MacReviverUITestsLaunchTests.swift */,
 			);
 			path = MacReviverUITests;
+			sourceTree = "<group>";
+		};
+		37F193092A3307A400362913 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3753DF5E2A2F4ACB00BA53BB /* MainView.swift */,
+				37F193072A33048900362913 /* MainViewModel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37F1930A2A3307B300362913 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				37F1930B2A3307C800362913 /* PlistFirmwareFetcher.swift */,
+				37F1930D2A3320F000362913 /* PlistFirmware.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3753DF5F2A2F4ACB00BA53BB /* ContentView.swift in Sources */,
-				3753DF662A2F4ACB00BA53BB /* Item.swift in Sources */,
+				3753DF5F2A2F4ACB00BA53BB /* MainView.swift in Sources */,
+				37F1930E2A3320F000362913 /* PlistFirmware.swift in Sources */,
 				3753DF5D2A2F4ACB00BA53BB /* MacReviverApp.swift in Sources */,
+				37F1930C2A3307C800362913 /* PlistFirmwareFetcher.swift in Sources */,
+				37F193082A33048900362913 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
