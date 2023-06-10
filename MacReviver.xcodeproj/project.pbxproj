@@ -17,6 +17,8 @@
 		37F193082A33048900362913 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F193072A33048900362913 /* MainViewModel.swift */; };
 		37F1930C2A3307C800362913 /* PlistFirmwareFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1930B2A3307C800362913 /* PlistFirmwareFetcher.swift */; };
 		37F1930E2A3320F000362913 /* PlistFirmware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1930D2A3320F000362913 /* PlistFirmware.swift */; };
+		37F193122A33F71800362913 /* DetailSoftwareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F193112A33F71800362913 /* DetailSoftwareView.swift */; };
+		37F193142A33FAB000362913 /* DetailSoftwareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F193132A33FAB000362913 /* DetailSoftwareViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		37F193072A33048900362913 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		37F1930B2A3307C800362913 /* PlistFirmwareFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFirmwareFetcher.swift; sourceTree = "<group>"; };
 		37F1930D2A3320F000362913 /* PlistFirmware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFirmware.swift; sourceTree = "<group>"; };
+		37F193112A33F71800362913 /* DetailSoftwareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSoftwareView.swift; sourceTree = "<group>"; };
+		37F193132A33FAB000362913 /* DetailSoftwareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSoftwareViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +143,8 @@
 		37F193092A3307A400362913 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3753DF5E2A2F4ACB00BA53BB /* MainView.swift */,
-				37F193072A33048900362913 /* MainViewModel.swift */,
+				37F193102A33F68700362913 /* DetailSoftwareView */,
+				37F1930F2A33F67D00362913 /* Main */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,6 +156,24 @@
 				37F1930D2A3320F000362913 /* PlistFirmware.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		37F1930F2A33F67D00362913 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				37F193072A33048900362913 /* MainViewModel.swift */,
+				3753DF5E2A2F4ACB00BA53BB /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		37F193102A33F68700362913 /* DetailSoftwareView */ = {
+			isa = PBXGroup;
+			children = (
+				37F193112A33F71800362913 /* DetailSoftwareView.swift */,
+				37F193132A33FAB000362913 /* DetailSoftwareViewModel.swift */,
+			);
+			path = DetailSoftwareView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,11 +306,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F193122A33F71800362913 /* DetailSoftwareView.swift in Sources */,
 				3753DF5F2A2F4ACB00BA53BB /* MainView.swift in Sources */,
 				37F1930E2A3320F000362913 /* PlistFirmware.swift in Sources */,
 				3753DF5D2A2F4ACB00BA53BB /* MacReviverApp.swift in Sources */,
 				37F1930C2A3307C800362913 /* PlistFirmwareFetcher.swift in Sources */,
 				37F193082A33048900362913 /* MainViewModel.swift in Sources */,
+				37F193142A33FAB000362913 /* DetailSoftwareViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

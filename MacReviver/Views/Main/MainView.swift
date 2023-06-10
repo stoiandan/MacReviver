@@ -25,11 +25,10 @@ struct MainView: View {
     
     var mainBody: some View {
         NavigationSplitView(sidebar: {
-            List {
+            List(selection: $model.selectedSwVersion) {
                 DisclosureGroup(
                     content: {
                         ForEach(model.hardwareVersions) { hwVersion in
-                            List(selection: $model.selectedSwVersion) {
                                 DisclosureGroup(content: {
                                     ForEach(hwVersion.versions) { swVersion in
                                         Text(swVersion.build)
@@ -39,7 +38,6 @@ struct MainView: View {
                                     Label(hwVersion.name, systemImage: "cart.circle.fill")
                                        
                                 })
-                            }
                         }
                     },
                     label: { Label("Mac Firmware", systemImage: "apple.logo") }
@@ -48,8 +46,8 @@ struct MainView: View {
             
             Spacer()
         }, detail: {
-            if let selectedMacOSVersion = model.selectedSwVersion {
-                Text(selectedMacOSVersion.build)
+            if let _ = model.selectedSwVersion {
+                DetailSoftwareView(viewModel: model.detailViewModel)
             } else {
                 Text("Please select a firmware")
             }

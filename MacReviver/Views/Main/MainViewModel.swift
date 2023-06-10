@@ -34,6 +34,10 @@ class MainViewModel {
         
         hardwareVersions = plistFirmware.hardwareVersions
     }
+    
+    var detailViewModel: DetailSoftwareViewModel {
+        DetailSoftwareViewModel(selectedSwVersion!)
+    }
 }
 
 
