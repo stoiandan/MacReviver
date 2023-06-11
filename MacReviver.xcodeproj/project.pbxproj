@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37444E192A34FA4E003DB6DF /* DownloadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37444E182A34FA4E003DB6DF /* DownloadState.swift */; };
 		3753DF5D2A2F4ACB00BA53BB /* MacReviverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF5C2A2F4ACB00BA53BB /* MacReviverApp.swift */; };
 		3753DF5F2A2F4ACB00BA53BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF5E2A2F4ACB00BA53BB /* MainView.swift */; };
 		3753DF612A2F4ACB00BA53BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3753DF602A2F4ACB00BA53BB /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37444E182A34FA4E003DB6DF /* DownloadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadState.swift; sourceTree = "<group>"; };
 		3753DF592A2F4ACB00BA53BB /* MacReviver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacReviver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3753DF5C2A2F4ACB00BA53BB /* MacReviverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacReviverApp.swift; sourceTree = "<group>"; };
 		3753DF5E2A2F4ACB00BA53BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			children = (
 				37F193112A33F71800362913 /* DetailSoftwareView.swift */,
 				37F193132A33FAB000362913 /* DetailSoftwareViewModel.swift */,
+				37444E182A34FA4E003DB6DF /* DownloadState.swift */,
 			);
 			path = DetailSoftwareView;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				37F1930C2A3307C800362913 /* PlistFirmwareFetcher.swift in Sources */,
 				37F193082A33048900362913 /* MainViewModel.swift in Sources */,
 				37F193142A33FAB000362913 /* DetailSoftwareViewModel.swift in Sources */,
+				37444E192A34FA4E003DB6DF /* DownloadState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +477,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MacReviver/MacReviver.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -498,6 +503,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MacReviver/MacReviver.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;

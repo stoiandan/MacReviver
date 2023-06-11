@@ -10,6 +10,9 @@ import SwiftData
 
 @Observable
 class MainViewModel {
+    
+    private var detailVieModelMap: [UUID:DetailSoftwareViewModel] = [:]
+    
     private(set) var hardwareVersions: [HardwareVersion] = []
     
     var selectedSwVersion: SoftwareVersion? = nil
@@ -36,7 +39,12 @@ class MainViewModel {
     }
     
     var detailViewModel: DetailSoftwareViewModel {
-        DetailSoftwareViewModel(selectedSwVersion!)
+        if let vm = detailVieModelMap[selectedSwVersion!.id] {
+            return vm
+        }
+        let vm = DetailSoftwareViewModel(selectedSwVersion!)
+        detailVieModelMap[selectedSwVersion!.id] = vm
+        return vm
     }
 }
 
@@ -54,4 +62,8 @@ struct SoftwareVersion: Identifiable, Hashable {
     let build: String
     let firmwareSHA1: String?
     let firmwareURL: String
+    
+    var name: String {
+        URL(string: firmwareURL)!.lastPathComponent
+    }
 }

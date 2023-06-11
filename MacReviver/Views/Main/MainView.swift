@@ -9,8 +9,8 @@ import SwiftUI
 
 
 struct MainView: View {
-   @Bindable var model = MainViewModel()
-
+    @Bindable var model = MainViewModel()
+    
     var body: some View {
         if !model.errorMessae.isEmpty {
             Text(model.errorMessae)
@@ -29,15 +29,15 @@ struct MainView: View {
                 DisclosureGroup(
                     content: {
                         ForEach(model.hardwareVersions) { hwVersion in
-                                DisclosureGroup(content: {
-                                    ForEach(hwVersion.versions) { swVersion in
-                                        Text(swVersion.build)
-                                            .tag(swVersion)
-                                    }
-                                }, label: {
-                                    Label(hwVersion.name, systemImage: "cart.circle.fill")
-                                       
-                                })
+                            DisclosureGroup(content: {
+                                ForEach(hwVersion.versions) { swVersion in
+                                    Text(swVersion.build)
+                                        .tag(swVersion)
+                                }
+                            }, label: {
+                                Label(hwVersion.name, systemImage: "cart.circle.fill")
+                                
+                            })
                         }
                     },
                     label: { Label("Mac Firmware", systemImage: "apple.logo") }

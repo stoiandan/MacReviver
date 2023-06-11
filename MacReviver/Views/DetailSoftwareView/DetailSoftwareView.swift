@@ -8,32 +8,75 @@
 import SwiftUI
 
 struct DetailSoftwareView: View {
-    let viewModel: DetailSoftwareViewModel
+    var viewModel: DetailSoftwareViewModel
     
     var body: some View {
         VStack {
-            Image(systemName: "square.and.arrow.down.fill")
-                .resizable()
-                .frame(width: 100, height: 100)
-                .clipShape(Circle())
-                .onTapGesture {
-                    if viewModel.isDownloading {
-                        return
-                    }
-                    
-                    viewModel.isDownloading.toggle()
-                    viewModel.download()
+            switch viewModel.donwloadState {
+            case .finished, .notStarted:
+                Image(systemName: .finished == viewModel.donwloadState ? "checkmark.circle.fill" : "square.and.arrow.down.fill")
+                    .resizable()
+                    .foregroundColor(.finished == viewModel.donwloadState ? .green : .primary)
+                    .frame(maxWidth: 100, maxHeight: 100)
+                    .onTapGesture(perform: viewModel.download)
+                if viewModel.donwloadState == .finished {
+                    Text("Download Finished successfully and SHA1 hashes match!")
                 }
-            if viewModel.isDownloading {
-                ProgressView(value: viewModel.progress)
+            case .inProgress(let progressValue):
+                ProgressView(value: progressValue,total: 1) {
+                    Text("Downloading... \(Int(progressValue*100))%")
+                }
+                .progressViewStyle(.circular)
+                
+            case .error(let errorMessage):
+                Text(errorMessage)
+                    .font(.subheadline)
+                    .background(.red)
             }
+            
             VStack(alignment: .leading, spacing: 10) {
-                Label("Build: \(viewModel.softwareVersion.build)", systemImage: "hammer.circle")
-                if let firmwareSHA1 = viewModel.softwareVersion.firmwareSHA1 {
-                    Label("SHA1: \(firmwareSHA1)", systemImage: "checkmark.circle.fill")
+                LabeledContent("", content: {
+                    HStack {
+                        Image(systemName: "hammer.circle")
+                            .foregroundColor(viewModel.copiedState == .build ? .green : .primary)
+                        Text("Build: \(viewModel.softwareVersion.build)")
+                    }
+                })
+                .onTapGesture {
+                    let pasteBoard = NSPasteboard.general
+                    pasteBoard.clearContents()
+                    pasteBoard.setString(viewModel.softwareVersion.build, forType: .string)
+                    viewModel.copiedState = .build
                 }
-                Label("Download URL: \(viewModel.softwareVersion.firmwareURL)", systemImage: "link.circle.fill")
-
+                if let firmwareSHA1 = viewModel.softwareVersion.firmwareSHA1 {
+                    LabeledContent("", content: {
+                        HStack {
+                            Image(systemName: "checkmark.circle.fill")
+                                .foregroundColor(viewModel.copiedState == .sha ? .green : .primary)
+                            Text("SHA1: \(firmwareSHA1)")
+                        }
+                    })
+                    .onTapGesture {
+                        let pasteBoard = NSPasteboard.general
+                        pasteBoard.clearContents()
+                        pasteBoard.setString(firmwareSHA1, forType: .string)
+                        viewModel.copiedState = .sha
+                    }
+                }
+                LabeledContent("", content: {
+                    HStack {
+                        Image(systemName: "link.circle.fill")
+                            .foregroundColor(viewModel.copiedState == .url ? .green : .primary)
+                        Text("Download URL: \(viewModel.softwareVersion.firmwareURL)")
+                    }
+                })
+                .onTapGesture {
+                    let pasteBoard = NSPasteboard.general
+                    pasteBoard.clearContents()
+                    pasteBoard.setString(viewModel.softwareVersion.firmwareURL, forType: .string)
+                    viewModel.copiedState = .url
+                }
+                
             }.padding()
         }
     }
@@ -41,4 +84,9 @@ struct DetailSoftwareView: View {
 
 #Preview {
     DetailSoftwareView(viewModel: DetailSoftwareViewModel( SoftwareVersion(build: "2HFFv", firmwareSHA1: "1231fsdfsdr32rfsdfds", firmwareURL: "https://cdn.net.apple.com")))
+}
+
+
+extension DetailSoftwareView {
+
 }
