@@ -15,6 +15,8 @@
 		3753DF712A2F4ACB00BA53BB /* MacReviverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF702A2F4ACB00BA53BB /* MacReviverTests.swift */; };
 		3753DF7B2A2F4ACC00BA53BB /* MacReviverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF7A2A2F4ACC00BA53BB /* MacReviverUITests.swift */; };
 		3753DF7D2A2F4ACC00BA53BB /* MacReviverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF7C2A2F4ACC00BA53BB /* MacReviverUITestsLaunchTests.swift */; };
+		375D2C312A35CF3500592575 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D2C302A35CF3500592575 /* LabelView.swift */; };
+		375D2C332A35CF5D00592575 /* LabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D2C322A35CF5D00592575 /* LabelViewModel.swift */; };
 		37F193082A33048900362913 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F193072A33048900362913 /* MainViewModel.swift */; };
 		37F1930C2A3307C800362913 /* PlistFirmwareFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1930B2A3307C800362913 /* PlistFirmwareFetcher.swift */; };
 		37F1930E2A3320F000362913 /* PlistFirmware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1930D2A3320F000362913 /* PlistFirmware.swift */; };
@@ -52,6 +54,8 @@
 		3753DF762A2F4ACC00BA53BB /* MacReviverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacReviverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3753DF7A2A2F4ACC00BA53BB /* MacReviverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacReviverUITests.swift; sourceTree = "<group>"; };
 		3753DF7C2A2F4ACC00BA53BB /* MacReviverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacReviverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		375D2C302A35CF3500592575 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		375D2C322A35CF5D00592575 /* LabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewModel.swift; sourceTree = "<group>"; };
 		37F193072A33048900362913 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		37F1930B2A3307C800362913 /* PlistFirmwareFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFirmwareFetcher.swift; sourceTree = "<group>"; };
 		37F1930D2A3320F000362913 /* PlistFirmware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFirmware.swift; sourceTree = "<group>"; };
@@ -142,6 +146,15 @@
 			path = MacReviverUITests;
 			sourceTree = "<group>";
 		};
+		375D2C2F2A35CEFB00592575 /* LabelView */ = {
+			isa = PBXGroup;
+			children = (
+				375D2C302A35CF3500592575 /* LabelView.swift */,
+				375D2C322A35CF5D00592575 /* LabelViewModel.swift */,
+			);
+			path = LabelView;
+			sourceTree = "<group>";
+		};
 		37F193092A3307A400362913 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +185,7 @@
 		37F193102A33F68700362913 /* DetailSoftwareView */ = {
 			isa = PBXGroup;
 			children = (
+				375D2C2F2A35CEFB00592575 /* LabelView */,
 				37F193112A33F71800362913 /* DetailSoftwareView.swift */,
 				37F193132A33FAB000362913 /* DetailSoftwareViewModel.swift */,
 				37444E182A34FA4E003DB6DF /* DownloadState.swift */,
@@ -311,12 +325,14 @@
 			files = (
 				37F193122A33F71800362913 /* DetailSoftwareView.swift in Sources */,
 				3753DF5F2A2F4ACB00BA53BB /* MainView.swift in Sources */,
+				375D2C312A35CF3500592575 /* LabelView.swift in Sources */,
 				37F1930E2A3320F000362913 /* PlistFirmware.swift in Sources */,
 				3753DF5D2A2F4ACB00BA53BB /* MacReviverApp.swift in Sources */,
 				37F1930C2A3307C800362913 /* PlistFirmwareFetcher.swift in Sources */,
 				37F193082A33048900362913 /* MainViewModel.swift in Sources */,
 				37F193142A33FAB000362913 /* DetailSoftwareViewModel.swift in Sources */,
 				37444E192A34FA4E003DB6DF /* DownloadState.swift in Sources */,
+				375D2C332A35CF5D00592575 /* LabelViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

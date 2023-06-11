@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailSoftwareView: View {
-    var viewModel: DetailSoftwareViewModel
+    @Bindable var viewModel: DetailSoftwareViewModel
     
     var body: some View {
         VStack {
@@ -35,39 +35,14 @@ struct DetailSoftwareView: View {
             }
             
             VStack(alignment: .leading, spacing: 10) {
-                LabeledContent("", content: {
-                    HStack {
-                        Image(systemName: "hammer.circle")
-                            .foregroundColor(viewModel.copiedState == .build ? .green : .primary)
-                        Text("Build: \(viewModel.softwareVersion.build)")
-                    }
-                })
-                .onTapGesture {
-                    viewModel.copyToClipboard(keyPath: \.build)
-                }
-                if let firmwareSHA1 = viewModel.softwareVersion.firmwareSHA1 {
-                    LabeledContent("", content: {
-                        HStack {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(viewModel.copiedState == .sha ? .green : .primary)
-                            Text("SHA1: \(firmwareSHA1)")
-                        }
-                    })
-                    .onTapGesture {
-                        viewModel.copyToClipboard(keyPath: \.firmwareSHA1!)
-                    }
+                LabelView(viewModel: viewModel.labelViewModel(forKeyPath: \.build, withTitle: "Build: ", icon: "hammer.circle"), copiedState: $viewModel.copiedState)
+
+                if let firmwareSHA1 =
+                    viewModel.softwareVersion.firmwareSHA1 {
+                    LabelView(viewModel: viewModel.labelViewModel(forKeyPath: \.firmwareSHA1!, withTitle: "SHA1: ", icon: "checkmark.circle.fill"), copiedState: $viewModel.copiedState)
                 }
                 
-                LabeledContent("", content: {
-                    HStack {
-                        Image(systemName: "link.circle.fill")
-                            .foregroundColor(viewModel.copiedState == .url ? .green : .primary)
-                        Text("Download URL: \(viewModel.softwareVersion.firmwareURL)")
-                    }
-                })
-                .onTapGesture {
-                    viewModel.copyToClipboard(keyPath: \.firmwareURL)
-                }
+                LabelView(viewModel: viewModel.labelViewModel(forKeyPath: \.firmwareURL, withTitle: "Download URL", icon: "link.circle.fill"), copiedState: $viewModel.copiedState)
                 
             }.padding()
         }

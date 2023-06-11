@@ -13,7 +13,7 @@ import SwiftUI
 @Observable
 class DetailSoftwareViewModel {
     
-    private(set) var copiedState: CopiedState = .none
+    var copiedState: CopiedState = .none
     
     private var downloadObserver: NSKeyValueObservation? = nil
     
@@ -74,6 +74,10 @@ class DetailSoftwareViewModel {
         pasteBoard.clearContents()
         pasteBoard.setString(value, forType: .string)
         copiedState = CopiedState.fromKeyPath(path)
+    }
+    
+    func labelViewModel(forKeyPath path: KeyPath<SoftwareVersion,String>, withTitle title: String, icon: String ) -> LabelViewModel {
+        return LabelViewModel(iconName: icon, tapGestureCallback: { [unowned self] in  self.copyToClipboard(keyPath: path) }, title: title , value: softwareVersion[keyPath: path], copiedState: CopiedState.fromKeyPath(path))
     }
     
 }
