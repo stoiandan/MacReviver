@@ -8,12 +8,12 @@
 import Foundation
 import SwiftData
 import CryptoKit
+import SwiftUI
 
 @Observable
 class DetailSoftwareViewModel {
     
-     var copiedState: CopiedState = .none
-
+    private(set) var copiedState: CopiedState = .none
     
     private var downloadObserver: NSKeyValueObservation? = nil
     
@@ -46,16 +46,16 @@ class DetailSoftwareViewModel {
         }
         
         downloadObserver = task.progress.observe(\.fractionCompleted, options: [.initial, .new]) { (progress, change) in
-            self.donwloadState = .inProgress(progress.fractionCompleted) 
+            self.donwloadState = .inProgress(progress.fractionCompleted)
         }
         
         task.resume()
-
+        
     }
     
     
     func checkSHA(path: URL) -> DownloadState {
-       let data = NSData(contentsOf: path)
+        let data = NSData(contentsOf: path)
         guard let data else {
             return .error("Could not calculate SHA1 for path: \(path)")
         }
@@ -67,13 +67,36 @@ class DetailSoftwareViewModel {
         return .finished
     }
     
+    func copyToClipboard(keyPath path: KeyPath<SoftwareVersion,String>) {
+        let value = softwareVersion[keyPath: path]
+        let pasteBoard = NSPasteboard.general;
+        
+        pasteBoard.clearContents()
+        pasteBoard.setString(value, forType: .string)
+        copiedState = CopiedState.fromKeyPath(path)
+    }
     
 }
 
 
-    enum CopiedState {
-        case none
-        case build
-        case sha
-        case url
+enum CopiedState {
+    case none
+    case build
+    case sha
+    case url
+}
+
+extension CopiedState {
+    static func fromKeyPath(_ path: KeyPath<SoftwareVersion,String>) -> Self {
+        return switch path {
+        case \.firmwareURL:
+                .url
+        case \.build:
+                .build
+        case \.firmwareSHA1!:
+                .sha
+        default:
+            fatalError("Cannot copy state none")
+        }
     }
+}

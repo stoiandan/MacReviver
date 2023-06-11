@@ -43,10 +43,7 @@ struct DetailSoftwareView: View {
                     }
                 })
                 .onTapGesture {
-                    let pasteBoard = NSPasteboard.general
-                    pasteBoard.clearContents()
-                    pasteBoard.setString(viewModel.softwareVersion.build, forType: .string)
-                    viewModel.copiedState = .build
+                    viewModel.copyToClipboard(keyPath: \.build)
                 }
                 if let firmwareSHA1 = viewModel.softwareVersion.firmwareSHA1 {
                     LabeledContent("", content: {
@@ -57,12 +54,10 @@ struct DetailSoftwareView: View {
                         }
                     })
                     .onTapGesture {
-                        let pasteBoard = NSPasteboard.general
-                        pasteBoard.clearContents()
-                        pasteBoard.setString(firmwareSHA1, forType: .string)
-                        viewModel.copiedState = .sha
+                        viewModel.copyToClipboard(keyPath: \.firmwareSHA1!)
                     }
                 }
+                
                 LabeledContent("", content: {
                     HStack {
                         Image(systemName: "link.circle.fill")
@@ -71,10 +66,7 @@ struct DetailSoftwareView: View {
                     }
                 })
                 .onTapGesture {
-                    let pasteBoard = NSPasteboard.general
-                    pasteBoard.clearContents()
-                    pasteBoard.setString(viewModel.softwareVersion.firmwareURL, forType: .string)
-                    viewModel.copiedState = .url
+                    viewModel.copyToClipboard(keyPath: \.firmwareURL)
                 }
                 
             }.padding()
@@ -84,9 +76,4 @@ struct DetailSoftwareView: View {
 
 #Preview {
     DetailSoftwareView(viewModel: DetailSoftwareViewModel( SoftwareVersion(build: "2HFFv", firmwareSHA1: "1231fsdfsdr32rfsdfds", firmwareURL: "https://cdn.net.apple.com")))
-}
-
-
-extension DetailSoftwareView {
-
 }
