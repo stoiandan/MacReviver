@@ -11,17 +11,22 @@ struct DetailSoftwareView: View {
     @Bindable var viewModel: DetailSoftwareViewModel
     
     var body: some View {
-        VStack {
-            switch viewModel.donwloadState {
-            case .finished, .notStarted:
+        if !gviewModel.donwloadState.isDownloading()  {
+            Group {
                 Image(systemName: .finished == viewModel.donwloadState ? "checkmark.circle.fill" : "square.and.arrow.down.fill")
                     .resizable()
                     .foregroundColor(.finished == viewModel.donwloadState ? .green : .primary)
                     .frame(maxWidth: 100, maxHeight: 100)
-                    .onTapGesture(perform: viewModel.download)
-                if viewModel.donwloadState == .finished {
-                    Text("Download Finished successfully and SHA1 hashes match!")
-                }
+                
+                Text(.finished == viewModel.donwloadState ? "Download Finished successfully and SHA1 hashes match!" : "Click to download firmware")
+            }
+            .onTapGesture(perform: .finished == viewModel.donwloadState ? {} : viewModel.download)
+        }
+        
+        VStack {
+            switch viewModel.donwloadState {
+            case .finished, .notStarted:
+                EmptyView()
             case .inProgress(let progressValue):
                 ProgressView(value: progressValue,total: 1) {
                     Text("Downloading... \(Int(progressValue*100))%")
