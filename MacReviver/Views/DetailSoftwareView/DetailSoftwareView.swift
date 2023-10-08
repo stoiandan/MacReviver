@@ -11,7 +11,7 @@ struct DetailSoftwareView: View {
     @Bindable var viewModel: DetailSoftwareViewModel
     
     var body: some View {
-        if !gviewModel.donwloadState.isDownloading()  {
+        if !viewModel.donwloadState.isDownloading()  {
             Group {
                 Image(systemName: .finished == viewModel.donwloadState ? "checkmark.circle.fill" : "square.and.arrow.down.fill")
                     .resizable()

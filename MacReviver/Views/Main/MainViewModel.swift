@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftData
+import Observation
 
 @Observable
 class MainViewModel {
