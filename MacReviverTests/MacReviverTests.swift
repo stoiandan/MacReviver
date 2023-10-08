@@ -35,9 +35,9 @@ final class MacReviverTests: XCTestCase {
     func testPlistFirmware() async throws {
         let firmware = try? await PlistFirmwareFetcher.plistFirmware()
         
-        let plistFrimware = PlistFirmware(plist: firmware!)
+        let plistFrimware = try? PlistFirmware(plist: firmware!)
         
-        XCTAssertTrue(plistFrimware.hardwareVersions.count != 0)
+        XCTAssertTrue(plistFrimware?.hardwareVersions.count != 0)
     }
     
     func testPerformanceExample() throws {
