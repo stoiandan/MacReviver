@@ -42,7 +42,7 @@ struct DetailSoftwareView: View {
             VStack(alignment: .leading, spacing: 10) {
                 LabelView(viewModel: viewModel.labelViewModel(forKeyPath: \.build, withTitle: "Build: ", icon: "hammer.circle"), copiedState: $viewModel.copiedState)
 
-                if let firmwareSHA1 =
+                if let _ =
                     viewModel.softwareVersion.firmwareSHA1 {
                     LabelView(viewModel: viewModel.labelViewModel(forKeyPath: \.firmwareSHA1!, withTitle: "SHA1: ", icon: "checkmark.circle.fill"), copiedState: $viewModel.copiedState)
                 }
