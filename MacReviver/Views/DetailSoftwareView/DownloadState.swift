@@ -17,13 +17,12 @@ enum DownloadState: Equatable {
 
 
 extension DownloadState {
-    
     func isDownloading() -> Bool {
         return switch self {
-        case .finished, .notStarted, .error(_):
-            false
         case .inProgress(_):
             true
+        default:
+            false
         }
     }
 }
