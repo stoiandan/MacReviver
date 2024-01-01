@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MainView: View {
     @Bindable var model = MainViewModel()
+    @State var autoDetectionFailed = false
     
     var body: some View {
         if !model.errorMessae.isEmpty {
@@ -49,9 +50,32 @@ struct MainView: View {
             if let _ = model.selectedSwVersion {
                 DetailSoftwareView(viewModel: model.detailViewModel)
             } else {
-                Text("Please select a firmware")
+                if autoDetectionFailed == false && model.autoDetectedViewModel == nil {
+                    Text("Trying to auto-detect hardware...")
+                        .font(.headline)
+                }
+                if let vm = model.autoDetectedViewModel {
+                    VStack{
+                        Text("This image was autoamtically detected based on your hardware").font(.subheadline)
+                            .padding()
+                        Spacer()
+                        DetailSoftwareView(viewModel: vm)
+                        Spacer()
+                    }
+                }
+                if autoDetectionFailed == true {
+                    Text("Could not automatically detect hardware").font(.headline)
+                    Text("Please manually select your firmware").font(.subheadline)
+                }
+
             }
-        })
+        }).task {
+            let vm = await autoDetect()
+            if vm == nil {
+                autoDetectionFailed = true
+            }
+            model.autoDetectedViewModel = vm
+        }
     }
 }
 

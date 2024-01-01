@@ -46,6 +46,8 @@ class MainViewModel {
         detailVieModelMap[selectedSwVersion!.id] = vm
         return vm
     }
+    
+    var autoDetectedViewModel: DetailSoftwareViewModel? = nil
 }
 
 

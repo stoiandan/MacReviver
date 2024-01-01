@@ -8,6 +8,8 @@
 import Foundation
 
 
+
+
 struct PlistFirmware {
     let hardwareVersions: [HardwareVersion]
     

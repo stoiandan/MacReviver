@@ -15,6 +15,7 @@ class DetailSoftwareViewModel {
     
     var copiedState: CopiedState = .none
     
+    
     private var downloadObserver: NSKeyValueObservation? = nil
     
     

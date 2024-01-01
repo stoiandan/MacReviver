@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372D210D2B4363780062DE15 /* AutoDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D210C2B4363780062DE15 /* AutoDetector.swift */; };
 		37444E192A34FA4E003DB6DF /* DownloadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37444E182A34FA4E003DB6DF /* DownloadState.swift */; };
 		3753DF5D2A2F4ACB00BA53BB /* MacReviverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF5C2A2F4ACB00BA53BB /* MacReviverApp.swift */; };
 		3753DF5F2A2F4ACB00BA53BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753DF5E2A2F4ACB00BA53BB /* MainView.swift */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		372D210C2B4363780062DE15 /* AutoDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoDetector.swift; sourceTree = "<group>"; };
+		372D210E2B4367850062DE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		37444E182A34FA4E003DB6DF /* DownloadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadState.swift; sourceTree = "<group>"; };
 		3753DF592A2F4ACB00BA53BB /* MacReviver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacReviver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3753DF5C2A2F4ACB00BA53BB /* MacReviverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacReviverApp.swift; sourceTree = "<group>"; };
@@ -88,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		372D210B2B43636E0062DE15 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				372D210C2B4363780062DE15 /* AutoDetector.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		3753DF502A2F4ACB00BA53BB = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +122,8 @@
 		3753DF5B2A2F4ACB00BA53BB /* MacReviver */ = {
 			isa = PBXGroup;
 			children = (
+				372D210E2B4367850062DE15 /* Info.plist */,
+				372D210B2B43636E0062DE15 /* Service */,
 				37F1930A2A3307B300362913 /* Domain */,
 				37F193092A3307A400362913 /* Views */,
 				3753DF5C2A2F4ACB00BA53BB /* MacReviverApp.swift */,
@@ -325,6 +338,7 @@
 			files = (
 				37F193122A33F71800362913 /* DetailSoftwareView.swift in Sources */,
 				3753DF5F2A2F4ACB00BA53BB /* MainView.swift in Sources */,
+				372D210D2B4363780062DE15 /* AutoDetector.swift in Sources */,
 				375D2C312A35CF3500592575 /* LabelView.swift in Sources */,
 				37F1930E2A3320F000362913 /* PlistFirmware.swift in Sources */,
 				3753DF5D2A2F4ACB00BA53BB /* MacReviverApp.swift in Sources */,
@@ -498,8 +512,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MacReviver/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacReviver/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -524,8 +540,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MacReviver/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacReviver/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
