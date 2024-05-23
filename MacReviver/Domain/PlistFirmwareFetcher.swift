@@ -10,7 +10,7 @@ import Foundation
 
 enum PlistFirmwareFetcher {
     static let firmwarePlistURL = "https://mesu.apple.com/assets/macos/com_apple_macOSIPSW/com_apple_macOSIPSW.xml"
-    static private let mimeType = "application/xml"
+    static private let mimeType = "text/xml"
     
     enum FirmwareDownloadError: Error {
         case CoulNotDownload

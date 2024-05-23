@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailSoftwareView: View {
-    @Bindable var viewModel: DetailSoftwareViewModel
+    @State var viewModel: DetailSoftwareViewModel
     
     var body: some View {
         if !viewModel.donwloadState.isDownloading()  {
