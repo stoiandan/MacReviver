@@ -9,4 +9,4 @@ Where possible, the SHA checksum is also provided and the downloaded image is ch
 
 <img width="1203" alt="image" src="https://github.com/stoiandan/MacReviver/assets/10388612/5ba878b8-f45e-4887-bcb6-5247b528cc23">
 
- No builds for the moment
+No app bundle distribution for the moment
